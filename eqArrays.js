@@ -5,7 +5,7 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(arr1, arr2) {
   return (arr1.toString() === arr2.toString());
-}
+};
 
 assertEqual(eqArrays([], []), true);
 assertEqual(eqArrays([], [1]), false);

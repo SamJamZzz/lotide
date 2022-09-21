@@ -26,7 +26,7 @@ const middle = function(arr) {
     return arr.slice(midIndex, midIndex + 2);
   }
   return [arr[midIndex]];
-}
+};
 
 assertArraysEqual(middle([]), []);
 assertArraysEqual(middle([4]), []);

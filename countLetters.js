@@ -4,20 +4,19 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(str) {
-  let upperCase = str.toUpperCase();
   let countObject = {};
-  for (let char of upperCase) {
+  for (let char of str) {
     if (!countObject[char]) {
       countObject[char] = 0;
     }
     countObject[char] += 1;
   }
   return countObject;
-}
+};
 
 const result1 = countLetters('attack');
 
-assertEqual(result1.A, 2);
-assertEqual(result1.T, 2);
-assertEqual(result1.K, 1);
-assertEqual(result1.L, undefined);
+assertEqual(result1.a, 2);
+assertEqual(result1.t, 2);
+assertEqual(result1.k, 1);
+assertEqual(result1.l, undefined);

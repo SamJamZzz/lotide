@@ -8,7 +8,9 @@ const eqObjects = function(object1, object2) {
   
   for (let key in object1) {
     if (typeof object1[key] === 'object' && !Array.isArray(object1[key]) && object1[key] !== null && typeof object2[key] === 'object' && !Array.isArray(object2[key]) && object2[key] !== null) {
-      eqObjects(object1[key], object2[key]);
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
+      }
       continue;
     }
 

@@ -6,6 +6,9 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(str) {
   let countObject = {};
   for (let char of str) {
+    if (str[char] === ' ') {
+      continue;
+    }
     if (!countObject[char]) {
       countObject[char] = 0;
     }

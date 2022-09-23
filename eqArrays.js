@@ -4,6 +4,10 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arr1, arr2) {
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+    return false;
+  }
+
   if (arr1.length !== arr2.length) {
     return false;    
   }

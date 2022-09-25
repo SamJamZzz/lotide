@@ -39,15 +39,17 @@ const flatten = function(arr) {
   let result = [];
   for (let element of arr) {
     if (Array.isArray(element)) {
-      for (let subElement of element) {
+      for (subElement of flatten(element)) {
         result.push(subElement);
       }
-    } else {
-      result.push(element);
+      continue;
     }
+    result.push(element);
   }
-  return result;
+    return result;
 };
+
+console.log(flatten([1, 2, [3, 4], 5, [6]]))
 
 assertArraysEqual(flatten([]), []);
 assertArraysEqual(flatten([1]), [1]);
@@ -56,3 +58,6 @@ assertArraysEqual(flatten([[1, 2]]), [1, 2]);
 assertArraysEqual(flatten([[1, 2], 3]), [1, 2, 3]);
 assertArraysEqual(flatten([1, [2, 3]]), [1, 2, 3]);
 assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+
+assertArraysEqual(flatten([1, 2, [3, 4, [5, [6, 7, 8, 9, [10]]]], 11, [12]]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+assertArraysEqual(flatten([1, 2, [[3, 11, 22, [9, 8, [7, 123]]], 4, 44], 22, 5, [[[6]]]]), [1, 2, 3, 11, 22, 9, 8, 7, 123, 4, 44, 22, 5, 6]);

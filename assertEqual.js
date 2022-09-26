@@ -3,8 +3,4 @@ const assertEqual = function(actual, expected) {
   console.log(output);
 };
 
-assertEqual('Lighthouse Labs', 'Bootcamp');
-assertEqual(1, 1);
-assertEqual('Sam', 'Sam');
-assertEqual('Sam', 'sam');
-assertEqual(20, 4);
+module.exports = assertEqual;

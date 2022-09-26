@@ -1,8 +1,3 @@
-const assertEqual = function(actual, expected) {
-  let output = actual === expected ? `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
-  console.log(output);
-};
-
 const eqArrays = function(arr1, arr2) {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
     return false;
@@ -35,16 +30,4 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-assertEqual(eqArrays([], []), true);
-assertEqual(eqArrays([], [1]), false);
-assertEqual(eqArrays([1], []), false);
-assertEqual(eqArrays([4], [4]), true);
-assertEqual(eqArrays([7], [4]), false);
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [1, 2, '3']), false);
-
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
-assertEqual(eqArrays([[2, 3], [[4, [3, 2, 4]], 5]], [[2, 3], [[4, [3, 2, 4]], 5]]), true);
-assertEqual(eqArrays([[2, 3], [[4, [3, 2, 4]], 5]], [[2, 3], [[4, [3, 4]], 5]]), false);
+module.exports = eqArrays;

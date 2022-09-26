@@ -1,3 +1,5 @@
+const eqObjects = require('./eqObjects');
+
 const eqArrays = function(arr1, arr2) {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
     return false;
